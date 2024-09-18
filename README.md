@@ -30,8 +30,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- [Solution](https://www.frontendmentor.io/challenges/art-gallery-website-yVdrZlxyA/)
+- [Live Site](https://razouck.github.io/art-gallery-website/index.html)
 
 ## My process
 
