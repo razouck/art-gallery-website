@@ -1,0 +1,330 @@
+@import "functions";
+
+:root
+{
+	--gold         : hsl(24, 56%, 63%);
+	--almost-black : hsl(0, 0%, 8%);
+	--dark-grey    : hsl(0, 0%, 27%);
+
+	box-sizing     : border-box;
+}
+
+*,
+::before,
+::after
+{
+	margin     : 0;
+	padding    : 0;
+	box-sizing : inherit;
+}
+
+body
+{
+	min-height       : 100vh;
+	font-family      : "Outfit", sans-serif;
+	font-size        : toRem(18);
+	line-height      : ratio(28, 18);
+	color            : var(--dark-grey);
+	background-color : white;
+}
+
+address
+{
+	font-style : inherit;
+}
+
+img
+{
+	font-style      : italic;
+	max-inline-size : 100%;
+	block-size      : auto;
+	vertical-align  : middle;
+	user-select     : none;
+}
+
+picture
+{
+	display : block;
+}
+
+img,
+picture
+{
+	pointer-events : none;
+	user-select    : none;
+}
+
+
+// Typography -------------------------------------------------------------------
+
+[class^="heading"],
+.button
+{
+	font-family    : "Big Shoulders Display", sans-serif;
+	text-transform : uppercase;
+}
+
+[class^="heading"]
+{
+	font-weight : 900;
+	color       : var(--almost-black);
+}
+
+.logo
+{
+	text-wrap : nowrap;
+}
+
+.heading-xl
+{
+	font-size   : toRem(60);
+	line-height : ratio(55, 60);
+}
+
+.heading-l,
+.heading-m
+{
+	font-size   : toRem(50);
+	line-height : ratio(45, 50);
+}
+
+.heading-s
+{
+	font-size   : toRem(32);
+	line-height : 1;
+}
+
+.body-s
+{
+	font-size   : toRem(16);
+	line-height : ratio(26, 16);
+}
+
+
+// Button -----------------------------------------------------------------------
+
+.button
+{
+	display              : inline-block;
+	position             : relative;
+	font-size            : toRem(20);
+	line-height          : ratio(24, 20);
+	letter-spacing       : toRem(3.64);
+	text-decoration      : none;
+	padding-inline-start : toRem(32);
+	padding-inline-end   : toRem(35);
+	padding-block        : toRem(24);
+	color                : white;
+	background-color     : var(--almost-black);
+
+	&:active
+	{
+		background-color : var(--gold);
+		transition       : all 100ms ease;
+	}
+
+	&.previous
+	{
+		inset-inline-start : toRem(56);
+	}
+
+	&.previous::after,
+	&.next::after
+	{
+		content             : "";
+		display             : block;
+		position            : absolute;
+		block-size          : 100%;
+		inline-size         : toRem(56);
+		background-color    : var(--gold);
+		inset-block-start   : 0;
+		background-repeat   : no-repeat;
+		background-size     : toRem(12);
+		background-position : center;
+		transition          : all 250ms ease;
+	}
+
+	&.previous::after
+	{
+		inset-inline-start : toRem(-56);
+		background-image   : url("../assets/icon-arrow-left.svg");
+	}
+
+	&.next::after
+	{
+		inset-inline-end : toRem(-56);
+		background-image : url("../assets/icon-arrow-right.svg");
+	}
+
+	&:hover.previous::after
+	{
+		background-position : 25% center;
+	}
+
+	&:hover.next::after
+	{
+		background-position : right 25% center;
+	}
+
+	&:active.previous::after,
+	&:active.next::after
+	{
+		background-color : var(--almost-black);
+	}
+}
+
+
+// Footer -----------------------------------------------------------------------
+
+footer
+{
+	padding-inline   : toRem(32);
+	padding-block    : toRem(48);
+	color            : white;
+	background-color : var(--almost-black);
+
+	> * + *
+	{
+		margin-block-start : toRem(38);
+	}
+
+	.logo
+	{
+		color : white;
+	}
+}
+
+nav ul
+{
+	display         : flex;
+	gap             : toRem(20);
+	list-style-type : none;
+}
+
+
+// Tablet -----------------------------------------------------------------------
+
+@media (width >= toRem(768))
+{
+	// Typography ---------------------------------------------------------------
+
+	body
+	{
+		font-size   : toRem(18);
+		line-height : ratio(28, 18);
+	}
+
+	.heading-xl
+	{
+		font-size : toRem(70);
+	}
+
+	.heading-l
+	{
+		font-size   : toRem(55);
+		line-height : 1;
+	}
+
+	.heading-m
+	{
+		font-size   : toRem(50);
+		line-height : ratio(45, 50);
+	}
+
+	.heading-s
+	{
+		font-size : toRem(32);
+	}
+
+	.body-s
+	{
+		font-size   : toRem(16);
+		line-height : ratio(26, 16);
+	}
+
+
+	// Footer -------------------------------------------------------------------
+
+	footer
+	{
+		display        : flex;
+		padding-inline : toRem(40);
+		padding-block  : toRem(56);
+
+		> * + *
+		{
+			margin-block-start : unset;
+		}
+
+		p
+		{
+			margin-inline-start : toRem(65);
+		}
+
+		nav
+		{
+			margin-inline-start : toRem(133);
+		}
+	}
+}
+
+
+// Desktop ----------------------------------------------------------------------
+
+@media (width >= toRem(1440))
+{
+	// Typography ---------------------------------------------------------------
+
+	body
+	{
+		font-size   : toRem(22);
+		line-height : ratio(32, 22);
+	}
+
+	.heading-xl
+	{
+		font-size : toRem(96);
+	}
+
+	.heading-l
+	{
+		font-size   : toRem(70);
+		line-height : 1;
+	}
+
+	.heading-m
+	{
+		font-size   : toRem(60);
+		line-height : 1;
+	}
+
+	.heading-s
+	{
+		font-size : toRem(36);
+	}
+
+	.body-s
+	{
+		font-size   : toRem(18);
+		line-height : ratio(28, 18);
+	}
+
+
+	// Footer -------------------------------------------------------------------
+
+	footer
+	{
+		padding-inline : toRem(164);
+		padding-block  : toRem(80);
+
+		p
+		{
+			margin-inline-start : toRem(140);
+		}
+
+		nav
+		{
+			margin-inline-start : toRem(280);
+		}
+	}
+}

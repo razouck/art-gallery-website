@@ -1,0 +1,202 @@
+@import "functions";
+@import url("base.css");
+
+// Layout -----------------------------------------------------------------------
+
+body > div,
+article,
+footer
+{
+	max-inline-size : toRem(375);
+	margin-inline   : auto;
+}
+
+
+// Map --------------------------------------------------------------------------
+
+.map-wrapper
+{
+	display       : grid;
+	align-items   : start;
+	justify-items : start;
+
+	> *
+	{
+		grid-row-start    : 1;
+		grid-column-start : 1;
+	}
+
+	.button
+	{
+		z-index : 9999;
+	}
+}
+
+
+// Article ----------------------------------------------------------------------
+
+article
+{
+	color               : white;
+	background-color    : var(--almost-black);
+	padding-inline      : toRem(16);
+	padding-block-start : toRem(48);
+	padding-block-end   : toRem(56);
+
+	> * + *
+	{
+		margin-block-start : toRem(20);
+	}
+
+	[class^="heading"]
+	{
+		color : inherit;
+	}
+
+	.heading-s
+	{
+		display            : inline-block;
+		margin-block-start : toRem(56);
+		margin-block-end   : toRem(20);
+		color              : var(--gold);
+	}
+
+}
+
+
+// Footer -----------------------------------------------------------------------
+
+footer
+{
+	color            : var(--almost-black);
+	background-color : var(--gold);
+
+	[class^="heading"]
+	{
+		color : inherit;
+	}
+
+	svg *
+	{
+		fill : var(--almost-black);
+	}
+}
+
+nav a:hover svg *
+{
+	fill   : white;
+	stroke : white;
+}
+
+
+// ------------------------------------------------------------------------------
+// Tablet -----------------------------------------------------------------------
+// ------------------------------------------------------------------------------
+
+@media (width >= toRem(768))
+{
+	// Layout -------------------------------------------------------------------
+
+	body > div,
+	article,
+	footer
+	{
+		max-inline-size : toRem(768);
+		margin-inline   : auto;
+	}
+
+
+	// Map ----------------------------------------------------------------------
+
+	.map-wrapper
+	{
+		.button
+		{
+			margin-inline-start : toRem(40);
+		}
+	}
+
+
+	// Article ------------------------------------------------------------------
+
+	article
+	{
+		display               : grid;
+		grid-template-columns : 291fr 398fr;
+		padding-inline        : toRem(40);
+		padding-block-start   : toRem(88);
+		padding-block-end     : toRem(80);
+
+		> *
+		{
+			grid-column-start : 2;
+		}
+
+		.heading-l
+		{
+			grid-column-start : 1;
+			max-inline-size   : 10ch;
+		}
+
+		address
+		{
+			margin-block-start : 0;
+		}
+
+		.heading-s
+		{
+			margin-block-start : unset;
+			margin-block-end   : toRem(20);
+		}
+	}
+}
+
+
+// ------------------------------------------------------------------------------
+// Desktop ----------------------------------------------------------------------
+// ------------------------------------------------------------------------------
+
+@media (width >= toRem(1440))
+{
+	// Layout -------------------------------------------------------------------
+
+	body > div,
+	article,
+	footer
+	{
+		max-inline-size : toRem(1440);
+		margin-inline   : auto;
+	}
+
+
+	// Map ----------------------------------------------------------------------
+
+	.map-wrapper
+	{
+		.button
+		{
+			margin-inline-start : toRem(156);
+		}
+	}
+
+
+	// Article ------------------------------------------------------------------
+
+	article
+	{
+		grid-template-columns : 291fr 398fr;
+		padding-inline        : toRem(165);
+		padding-block-start   : toRem(104);
+		padding-block-end     : toRem(128);
+
+		> * + *
+		{
+			margin-block-start : toRem(32);
+		}
+
+		.heading-s
+		{
+			margin-block-end : toRem(24);
+		}
+	}
+}
