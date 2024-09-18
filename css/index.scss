@@ -37,6 +37,11 @@ main
 		margin-block-start : toRem(16);
 	}
 
+	h2
+	{
+		text-wrap : balance;
+	}
+
 	> section:first-of-type
 	{
 		margin-block-start : toRem(25);
