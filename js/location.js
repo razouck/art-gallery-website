@@ -9,7 +9,7 @@ function init()
 
 	const icon = L.icon(
 		{
-			iconUrl     : "../assets/icon-location.svg",
+			iconUrl     : "https://raw.githubusercontent.com/razouck/art-gallery-website/main/assets/icon-location.svg",
 			iconSize    : [ 66, 88 ],
 			iconAnchor  : [ 33, 88 ],
 			popupAnchor : [ 0, -81 ],
