@@ -24,6 +24,7 @@ function init()
 		{
 			attribution : '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
 			ext         : "png",
+			minZoom     : 16,
 		},
 	).addTo( map );
 
