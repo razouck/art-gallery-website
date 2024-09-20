@@ -16,13 +16,14 @@ function init()
 		},
 	);
 
-	const map     = L.map( 'map', options );
-	const marker  = L.marker( options.center, { icon : icon } ).addTo( map );
-	const basemap = 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';
+	const map         = L.map( 'map', options );
+	const marker      = L.marker( options.center, { icon : icon } ).addTo( map );
+	const basemap     = 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';
+	const attribution = '&copy; <a href="http://www.openstreetmap.org/copyright">openstreetmap</a>';
 
 	L.tileLayer( basemap,
 		{
-			attribution : '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+			attribution : attribution,
 			ext         : "png",
 			minZoom     : 16,
 		},
