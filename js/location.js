@@ -2,7 +2,7 @@ function init()
 {
 	const options = {};
 
-	options.center             = [ 41.485534, -71.308221 ];
+	options.center             = [ 41.485534, -71.308134 ];
 	options.zoom               = 16;
 	options.attributionControl = false;
 	options.zoomControl        = false;
